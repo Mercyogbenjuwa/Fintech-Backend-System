@@ -8,16 +8,20 @@ interface TransactionAttributes {
   transactionID: number;
   senderID: number;
   recipientID: number;
+  accountNumber : string;
   amount: number;
-  timestamp: Date;
   transactionReference: string;
+  status: boolean;
+  timestamp: Date;
 }
 
 export interface TransactionInput {
   senderID: number;
   recipientID: number;
   amount: number;
+  accountNumber : string;
   transactionReference: string;
+  status: boolean;
 }
 
 export interface TransactionOutput extends Required<TransactionAttributes> {
@@ -29,9 +33,11 @@ class Transaction extends Model<TransactionAttributes, TransactionInput> impleme
   public transactionID!: number;
   public senderID!: number;
   public recipientID!: number;
+  public accountNumber! : string;
   public amount!: number;
-  public timestamp!: Date;
   public transactionReference!: string;
+  public status!: boolean;
+  public timestamp!: Date;
 
   public readonly Sender?: User;
   public readonly Recipient?: User;
@@ -43,6 +49,10 @@ Transaction.init(
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       primaryKey: true,
+    },
+    accountNumber: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     senderID: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -65,12 +75,17 @@ Transaction.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    status: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
+    },
   },
   {
     timestamps: true,
     sequelize: sequelizeConnection,
   }
 );
-
+//PENDING OR SUCESSFUL STATUS
 
 export default Transaction;

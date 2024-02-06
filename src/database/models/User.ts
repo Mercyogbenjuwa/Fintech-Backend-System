@@ -1,5 +1,4 @@
 /**===================================== Users  Table  ===================================== **/
-
 import { DataTypes, Model } from 'sequelize';
 import sequelizeConnection from '../config';
 import Wallet from './Wallet';
@@ -10,6 +9,7 @@ interface UserAttributes {
   username: string;
   email: string;
   password: string;
+  accountNumber : string;
   verificationToken : string;
   emailVerified: boolean;
 }
@@ -18,6 +18,7 @@ export interface UserInput {
   username: string;
   email: string;
   password: string;
+  accountNumber : string;
   verificationToken : string;
   emailVerified: boolean;
 }
@@ -32,6 +33,7 @@ class User extends Model<UserAttributes, UserInput> implements UserAttributes {
   public username!: string;
   public email!: string;
   public password!: string;
+  public accountNumber! : string;
   public verificationToken! : string;
   public emailVerified!: boolean;
 
@@ -57,6 +59,10 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    accountNumber: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     verificationToken:{
       type: DataTypes.STRING,

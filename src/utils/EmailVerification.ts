@@ -24,7 +24,7 @@ class EmailVerificationService {
       html: ` 
       <div style="background-color: white; text-align: center; font-family: 'Poppins', sans-serif; padding: 17px;">       
         <img src="cid:${imageAttachment.cid}" alt="Email Verification" style="max-width: 100%; height: auto; margin-top: 20px;" />
-        <p style="color: black; font-size: 30px;">${verificationToken}</p>
+        <p style="color: green; font-size: 30px;">${verificationToken}</p>
       </div>
       `,
       attachments: [imageAttachment],

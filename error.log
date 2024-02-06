@@ -1,0 +1,8 @@
+{"level":"error","message":"WRONG EMAIL FORMAT"}
+{"level":"error","message":"WRONG EMAIL FORMAT"}
+{"level":"error","message":"WRONG EMAIL FORMAT - Email: switchiveemail.com"}
+{"level":"error","message":"PLEASE FILL IN ALL REQUIRED FIELDS - Request Body: [object Object]"}
+{"level":"error","message":"PLEASE FILL IN ALL REQUIRED FIELDS - Request Body: {\"usernam\":\"AnotherTestCountry\",\"email\":\"switchive@email.com\",\"password\":\"password123$5\"}"}
+{"level":"error","message":"PLEASE FILL IN ALL REQUIRED FIELDS - Request Body: {\"username\":\"AnotherTestCountry\",\"email\":\"switchive@email.com\",\"passwor\":\"password123$5\",\"password\":\"********\"}"}
+{"level":"error","message":"PLEASE FILL IN ALL REQUIRED FIELDS - Request Body: {\"username\":\"AnotherTestCountry\",\"email\":\"switchive@email.com\",\"password\":\"********\"}"}
+{"level":"error","message":"AN ERROR OCCURRED Content: {}"}

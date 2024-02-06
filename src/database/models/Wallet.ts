@@ -8,12 +8,14 @@ interface WalletAttributes {
   balance: number;
   currency: string;
   userID: number;
+  accountNumber : string;
 }
 
 export interface WalletInput {
   balance: number;
   currency: string;
   userID: number;
+  accountNumber : string;
 }
 
 export interface WalletOutput extends Required<WalletAttributes> {
@@ -25,6 +27,7 @@ class Wallet extends Model<WalletAttributes, WalletInput> implements WalletAttri
   public balance!: number;
   public currency!: string;
   public userID!: number;
+  public accountNumber! : string;
 
   public readonly User?: User;
 }
@@ -48,6 +51,10 @@ Wallet.init(
     userID: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
+    },
+    accountNumber: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
   },
   {
