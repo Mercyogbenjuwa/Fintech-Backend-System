@@ -1,18 +1,33 @@
-import express, { Request, Response } from 'express';
-import AuthController from '../controllers/Auth';
-import {validateContentType} from "../../utils/Content-Type";
-import limiter  from "../../utils/Rate-Limiting";
+import express, { Request, Response } from "express";
+import AuthController from "../controllers/Auth";
+import { validateContentType } from "../../utils/ContentType";
 
-const userRouter = express.Router();
+//*************************************** Authentication Routes *****************************************//
 
+const authRouter = express.Router();
 
-userRouter.post('/register', validateContentType(['application/json']), async (req: Request, res: Response) => {
-  await AuthController.registerUser(req, res);
-});
+authRouter.post(
+  "/register",
+  validateContentType(["application/json"]),
+  async (req: Request, res: Response) => {
+    await AuthController.registerUser(req, res);
+  }
+);
 
+authRouter.post(
+  "/verify-token",
+  validateContentType(["application/json"]),
+  async (req: Request, res: Response) => {
+    await AuthController.verifyToken(req, res);
+  }
+);
 
-userRouter.post('/verify-token', async (req: Request, res: Response) => {
-  await AuthController.verifyToken(req, res);
-});
+authRouter.post(
+  "/login",
+  validateContentType(["application/json"]),
+  async (req: Request, res: Response) => {
+    await AuthController.loginUser(req, res);
+  }
+);
 
-export default userRouter;
+export default authRouter;

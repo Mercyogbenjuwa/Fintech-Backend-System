@@ -1,6 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import { FintechResponse } from './FintechResponse';
 
+
+//================================ Validating Content Type  =============================//
 export const validateContentType = (allowedTypes: string[]) => {
   return (req: Request, res: Response, next: NextFunction) => {
     try {

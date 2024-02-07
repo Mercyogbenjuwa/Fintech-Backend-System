@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 
+//================================ Email Verification =============================//
 class EmailVerificationService {
   static async sendVerificationEmail(email: string, verificationToken: string) {
     const imageAttachment = {

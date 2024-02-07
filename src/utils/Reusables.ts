@@ -5,6 +5,7 @@ export const generateVerificationCode: GenerateVerificationCodeFn = () => {
 };
 
 
+
 /**===================================== Validate Password ===================================== **/
 export type ValidatePasswordFn = (password: string) => boolean;
 export const validatePassword: ValidatePasswordFn = (password: string) =>{

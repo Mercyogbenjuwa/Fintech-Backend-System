@@ -1,5 +1,5 @@
 /**===================================== Database  Setup  ===================================== **/
-import dbInit from './database/init';
+import dbInit from "./database/init";
 
 const setup = async () => {
   await dbInit();
